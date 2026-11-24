@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Furssy Games | Play Beyond</title>
+  <meta name="description" content="사소한 상상이 멈추지 않는 플레이가 될 때까지. 독립 게임 스튜디오 Furssy Games의 공식 웹사이트입니다." />
+  <meta name="theme-color" content="#0b0e13" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Furssy Games" />
+  <meta property="og:title" content="Furssy Games | Play Beyond" />
+  <meta property="og:description" content="조금 엉뚱하고, 그래서 더 재미있는 게임을 만드는 독립 게임 스튜디오." />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="twitter:card" content="summary" />
+  <style>
+:root { --bg:#0b0e13; --surface:#121821; --surface2:#19222d; --text:#f3f6fa; --muted:#9ba8b8; --line:rgba(255,255,255,.1); --accent:#a8f06a; --accentInk:#10150d; --accent2:#63d9c4; --gold:#f5c66b; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Pretendard,"Noto Sans KR",system-ui,sans-serif; line-height:1.6; overflow-x:hidden; }
+a { color:inherit; text-decoration:none; }
+button,input,textarea { font:inherit; }
+.wrap { width:min(1200px,calc(100% - 48px)); margin:auto; }
+.topbar { position:fixed; z-index:50; inset:0 0 auto; border-bottom:1px solid var(--line); background:rgba(11,14,19,.82); backdrop-filter:blur(16px); }
+.nav { height:76px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.brand { display:flex; align-items:center; gap:11px; font-family:Impact,"Arial Black",sans-serif; font-size:15px; }
+.brandMark { width:34px; height:34px; display:grid; place-items:center; border-radius:10px; background:var(--accent); color:var(--accentInk); font-weight:900; }
+.navLinks { display:flex; gap:8px; color:var(--muted); font-size:13px; }
+.navLinks a { padding:8px 12px; border-radius:6px; }
+.navLinks a:hover { color:var(--accent); background:rgba(255,255,255,.04); }
+.navCta { padding:10px 18px; border-radius:8px; background:var(--accent); color:var(--accentInk); font-weight:800; }
+.hero { min-height:100svh; display:grid; align-items:center; padding:140px 0 70px; position:relative; overflow:hidden; background:radial-gradient(circle at 78% 45%,rgba(99,217,196,.18),transparent 38%),radial-gradient(circle at 10% 90%,rgba(87,109,175,.13),transparent 38%); }
+.hero:after { content:""; position:absolute; inset:0; background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px); background-size:64px 64px; mask-image:radial-gradient(circle at 60% 40%,#000,transparent 65%); opacity:.22; }
+.heroGrid { display:grid; grid-template-columns:1.15fr .85fr; align-items:center; gap:50px; position:relative; z-index:1; }
+.eyebrow,.kicker { color:var(--accent); font-family:ui-monospace,monospace; font-size:11px; letter-spacing:.16em; font-weight:800; }
+h1,h2,h3 { margin:0; }
+.hero h1 { font-size:clamp(44px,7vw,88px); line-height:1.05; margin:22px 0 26px; letter-spacing:-.03em; }
+.hero h1 mark { background:var(--accent); color:var(--accentInk); padding:0 .1em; }
+.heroCopy { max-width:540px; color:var(--muted); font-size:17px; }
+.actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:34px; }
+.button { min-height:48px; display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:0 22px; border:1px solid var(--accent); border-radius:8px; background:var(--accent); color:var(--accentInk); font-weight:800; cursor:pointer; }
+.button.ghost { background:rgba(255,255,255,.02); color:var(--text); border-color:var(--line); }
+.heroArt { aspect-ratio:1; max-width:430px; justify-self:center; display:grid; place-items:center; position:relative; }
+.orbit { position:absolute; border-radius:50%; border:1px dashed rgba(255,255,255,.18); }
+.orbit.one { inset:4%; animation:spin 28s linear infinite; }
+.orbit.two { inset:20%; border-color:rgba(168,240,106,.35); border-style:solid; animation:spin 18s linear infinite reverse; }
+.core { width:40%; aspect-ratio:1; border-radius:28% 72% 58% 42%/45% 39% 61% 55%; background:linear-gradient(145deg,#d8ff9e,#63d9c4 55%,#5861a5); box-shadow:0 30px 90px rgba(99,217,196,.28); animation:morph 9s ease-in-out infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+@keyframes morph { 33% { border-radius:58% 42% 33% 67%/60% 52% 48% 40%; transform:rotate(45deg); } 66% { border-radius:40% 60% 70% 30%/35% 65% 35% 65%; transform:rotate(-20deg); } }
+.marquee { overflow:hidden; background:var(--accent); color:var(--accentInk); border-block:1px solid var(--line); transform:rotate(-1deg) scale(1.02); }
+.marqueeTrack { display:flex; width:max-content; gap:28px; padding:12px 0; font-size:18px; font-weight:900; animation:marquee 30s linear infinite; }
+@keyframes marquee { to { transform:translateX(-50%); } }
+section { padding:110px 0; }
+.sectionHead { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:42px; }
+.sectionHead h2 { font-size:clamp(34px,5vw,56px); line-height:1.12; margin-top:10px; }
+.sectionDesc { max-width:430px; color:var(--muted); }
+.games,.about { background:#0e131a; border-bottom:1px solid var(--line); }
+.bento { display:grid; grid-template-columns:repeat(12,1fr); gap:18px; }
+.card { grid-column:span 6; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:var(--surface); transition:.3s; }
+.card.featured { grid-column:span 7; }
+.card:not(.featured) { grid-column:span 5; }
+.card:hover { transform:translateY(-4px); border-color:rgba(168,240,106,.45); }
+.cover { min-height:230px; display:grid; place-items:center; position:relative; background:radial-gradient(circle,#5d7964,#263936 60%,#171d27); }
+.featured .cover { min-height:340px; }
+.mining { background:radial-gradient(circle,#b1874e,#51402d 55%,#1d2026); }
+.aether { background:radial-gradient(circle,#7c6bb0,#38335c 55%,#161929); }
+.symbol { width:150px; height:150px; border:1px solid currentColor; border-radius:22% 78% 48% 52%; color:rgba(216,255,158,.75); display:grid; place-items:center; font-size:90px; transform:rotate(45deg); }
+.symbol span { transform:rotate(-45deg); }
+.cardInfo { padding:22px 24px 26px; }
+.meta { color:var(--accent); font:700 10px ui-monospace,monospace; letter-spacing:.14em; }
+.card h3 { margin:8px 0; font-size:28px; }
+.card p { color:var(--muted); }
+.tag { position:absolute; top:16px; left:16px; padding:6px 10px; border-radius:6px; background:rgba(11,14,19,.7); font-size:11px; }
+.aboutGrid { display:grid; grid-template-columns:.9fr 1.1fr; gap:70px; }
+.aboutText { color:var(--muted); font-size:17px; }
+.aboutText .lead { color:var(--text); font-size:22px; }
+.values { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:30px; }
+.value { padding:22px; border:1px solid var(--line); border-radius:12px; background:var(--surface); }
+.value strong { color:var(--accent); display:block; }
+.contactGrid { display:grid; grid-template-columns:1fr 1fr; gap:70px; }
+.form { padding:32px; border:1px solid rgba(168,240,106,.24); border-radius:18px; background:var(--surface); }
+.field { margin-bottom:16px; }
+.field label { display:block; margin-bottom:7px; font-weight:700; }
+.field input,.field textarea { width:100%; padding:14px 16px; border:1px solid var(--line); border-radius:10px; background:var(--bg); color:var(--text); }
+.field textarea { resize:vertical; }
+.submit { width:100%; }
+.status { min-height:24px; color:var(--accent); text-align:center; }
+footer { border-top:1px solid var(--line); padding:30px 0; color:var(--muted); }
+.footerInner { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+@keyframes spin2 { to { transform:rotate(360deg); } }
+@media(max-width:860px) { .wrap{width:min(100% - 36px,1200px)} .navLinks{display:none} .heroGrid,.aboutGrid,.contactGrid{grid-template-columns:1fr} .heroArt{max-width:300px;order:-1} .bento{grid-template-columns:1fr}.card,.card.featured,.card:not(.featured){grid-column:auto} .sectionHead{display:block}.sectionDesc{margin-top:12px}.footerInner{flex-direction:column}.hero{padding-top:110px} }
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+  <header class="topbar"><div class="wrap nav">
+    <a class="brand" href="#home"><span class="brandMark">F</span>FURSSY GAMES</a>
+    <nav class="navLinks"><a href="#games">PROJECTS</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></nav>
+    <a class="navCta" href="#contact">문의하기</a>
+  </div></header>
+  <main>
+    <section class="hero" id="home"><div class="wrap heroGrid">
+      <div><div class="eyebrow">INDEPENDENT GAME STUDIO</div>
+        <h1>사소한 상상이 멈추지 않는 <mark>플레이</mark>가 될 때까지</h1>
+        <p class="heroCopy">조금 엉뚱하고, 그래서 더 재미있는 게임을 만드는 스튜디오 <strong>Furssy Games</strong>입니다. 머릿속에 떠오른 재미있는 장면을 직접 경험할 수 있는 세계로 옮깁니다.</p>
+        <div class="actions"><a class="button" href="#games">프로젝트 둘러보기 ↘</a><a class="button ghost" href="#about">스튜디오 소개</a></div>
+      </div>
+      <div class="heroArt"><div class="orbit one"></div><div class="orbit two"></div><div class="core"></div></div>
+    </div></section>
+    <div class="marquee"><div class="marqueeTrack"><span>IMAGINE ✦ 사소한 상상 ✦ CREATE ✦ 끝까지 다듬기 ✦ PLAY ✦ 다시 켜고 싶은 순간 ✦</span><span>IMAGINE ✦ 사소한 상상 ✦ CREATE ✦ 끝까지 다듬기 ✦ PLAY ✦ 다시 켜고 싶은 순간 ✦</span></div></div>
+    <section class="games" id="games"><div class="wrap">
+      <div class="sectionHead"><div><div class="kicker">01 / OUR PROJECTS</div><h2>우리가 만들고 있는 세계</h2></div><p class="sectionDesc">원작 세계관부터 채굴 게임, 마인크래프트 서버까지. Furssy Games의 프로젝트를 소개합니다.</p></div>
+      <div class="bento">
+        <article class="card featured"><div class="cover"><span class="tag">원작 제작중</span><div class="symbol"><span>A</span></div></div><div class="cardInfo"><div class="meta">ORIGINAL IP · WORLDVIEW</div><h3>AFW</h3><p>Furssy Games만의 개성과 이야기를 담아 처음부터 새롭게 빚어내고 있는 오리지널 원작 프로젝트입니다.</p></div></article>
+        <article class="card"><div class="cover mining"><span class="tag">개발중</span><div class="symbol"><span>M</span></div></div><div class="cardInfo"><div class="meta">MINING · ADVENTURE</div><h3>Mining Game</h3><p>깊은 땅속을 파고들며 미지의 자원을 발견하고 성장해 나가는 손맛 가득한 채굴 게임 프로젝트입니다.</p></div></article>
+        <article class="card"><div class="cover aether"><span class="tag">개발중</span><div class="symbol"><span>Æ</span></div></div><div class="cardInfo"><div class="meta">MINECRAFT SERVER</div><h3>루미너스 에테르</h3><p>새로운 모험과 함께 어울리는 즐거움을 경험할 수 있도록 구축 중인 Furssy Games의 마인크래프트 서버입니다.</p></div></article>
+      </div>
+    </div></section>
+    <section class="about" id="about"><div class="wrap aboutGrid">
+      <div><div class="kicker">03 / ABOUT US</div><h2>조금 엉뚱하지만,<br>그래서 더 재미있게.</h2></div>
+      <div class="aboutText"><p class="lead">머릿속에 떠오른 재미있는 장면을 직접 플레이할 수 있는 세계로 옮기는 독립 게임 스튜디오입니다.</p><p>정해진 공식에 갇히기보다 “이거 해보면 진짜 재미있겠다”라는 순수한 호기심에서 출발합니다.</p>
+        <div class="values"><div class="value"><strong>01 · IMAGINATION</strong>사소한 상상을 현실로</div><div class="value"><strong>02 · FUN FIRST</strong>직관적이고 즐거운 플레이</div><div class="value"><strong>03 · TOGETHER</strong>플레이어와 가까이 호흡</div><div class="value"><strong>04 · PERSISTENCE</strong>끝까지 다듬는 집요함</div></div>
+      </div>
+    </div></section>
+    <section id="contact"><div class="wrap contactGrid">
+      <div><div class="kicker">05 / GET IN TOUCH</div><h2>함께 이야기하고 싶다면 언제든 편하게!</h2><p style="color:var(--muted)">게임 피드백, 협업 제안, 서버 문의 등 어떤 이야기든 환영합니다.</p><p><strong>EMAIL</strong><br><a href="mailto:furssy0630@gmail.com">furssy0630@gmail.com</a></p><p><strong>DISCORD</strong><br>furssy</p></div>
+      <form class="form" action="mailto:furssy0630@gmail.com" method="post" enctype="text/plain"><div class="field"><label for="name">이름 / 닉네임</label><input id="name" name="name" required placeholder="예) 땅굴탐험가"></div><div class="field"><label for="email">답장 받을 이메일</label><input id="email" name="email" type="email" required placeholder="you@example.com"></div><div class="field"><label for="message">메시지</label><textarea id="message" name="message" rows="6" required minlength="10" placeholder="하고 싶은 이야기를 자유롭게 적어주세요."></textarea></div><button class="button submit" type="submit">메시지 보내기 ↗</button><p class="status"></p></form>
+    </div></section>
+  </main>
+  <footer><div class="wrap footerInner"><a class="brand" href="#home"><span class="brandMark">F</span>FURSSY GAMES</a><div>© 2026 Furssy Games. All rights reserved.</div></div></footer>
+</body>
+</html>
